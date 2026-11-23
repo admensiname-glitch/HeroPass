@@ -147,9 +147,6 @@ function HomePage() {
       </header>
 
       <section className="hero-section" id="inicio">
-        <div className="hero-orbit hero-orbit-one" />
-        <div className="hero-orbit hero-orbit-two" />
-        <div className="hero-swoosh" />
         <div className="container hero-content">
           <div className="hero-copy">
             <div className="eyebrow eyebrow-light">
@@ -180,13 +177,9 @@ function HomePage() {
           </div>
 
           <div className="hero-art" aria-label="Mascote super-herói HeroPass">
-            <div className="mascot-aura" />
-            <div className="mascot-speedline mascot-speedline-one" />
-            <div className="mascot-speedline mascot-speedline-two" />
             <HeroMascot settled={mascotSettled} onEnded={() => setMascotSettled(true)} />
           </div>
         </div>
-        <div className="hero-bottom-line" />
       </section>
 
       <section className="platform-section section-pad" id="plataformas">
