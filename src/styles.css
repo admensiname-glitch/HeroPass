@@ -492,3 +492,38 @@ a { color: inherit; text-decoration: none; }
 @media (prefers-reduced-motion: reduce) {
   .hero-mascot-video.is-settled { animation: none !important; }
 }
+
+
+/* HeroPass mascot: enter from outside the right edge and settle toward center */
+.hero-art { --mascot-rest-x: -7%; }
+.hero-mascot-video {
+  animation: mascot-enter 2.4s cubic-bezier(.18,.78,.22,1) both;
+  mix-blend-mode: screen;
+}
+.hero-mascot-video.is-settled {
+  animation: mascot-video-hover 4.8s ease-in-out infinite;
+}
+@keyframes mascot-enter {
+  0% {
+    opacity: 0;
+    transform: translate3d(118%, 8px, 0) scale(.92);
+  }
+  72% {
+    opacity: 1;
+    transform: translate3d(calc(var(--mascot-rest-x) - 2%), -5px, 0) scale(1.025);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(var(--mascot-rest-x), 0, 0) scale(1);
+  }
+}
+@keyframes mascot-video-hover {
+  0%, 100% { transform: translate3d(var(--mascot-rest-x), 2px, 0); }
+  50% { transform: translate3d(var(--mascot-rest-x), -9px, 0); }
+}
+@media (max-width: 640px) {
+  .hero-art { --mascot-rest-x: 0%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-mascot-video { animation: none !important; opacity: 1; transform: none; }
+}
