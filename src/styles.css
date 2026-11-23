@@ -365,3 +365,87 @@ a { color: inherit; text-decoration: none; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
 }
+
+
+/* HeroPass mascot: full-body flight illustration */
+.hero-art {
+  overflow: visible;
+  min-width: 0;
+  isolation: isolate;
+}
+.mascot-aura {
+  position: absolute;
+  width: min(82%, 440px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, #168bff42 0%, #0a55c51c 44%, transparent 72%);
+  filter: blur(18px);
+  animation: mascot-aura-pulse 5.8s ease-in-out infinite;
+}
+.hero-mascot {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: min(112%, 650px);
+  max-height: 530px;
+  overflow: visible;
+  filter: drop-shadow(0 22px 26px #020d2766);
+  transform-origin: 52% 48%;
+  animation: mascot-flight 6.4s ease-in-out infinite;
+}
+.mascot-cape {
+  transform-box: fill-box;
+  transform-origin: 85% 20%;
+  animation: mascot-cape-wave 3.8s ease-in-out infinite;
+}
+.mascot-body {
+  transform-box: fill-box;
+  transform-origin: 52% 45%;
+  animation: mascot-body-roll 6.4s ease-in-out infinite;
+}
+.mascot-speedline {
+  position: absolute;
+  z-index: 1;
+  height: 2px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, transparent, #65bdff9c, transparent);
+  transform: rotate(-18deg);
+  pointer-events: none;
+}
+.mascot-speedline-one { width: 44%; left: 1%; top: 61%; }
+.mascot-speedline-two { width: 32%; left: 8%; top: 68%; opacity: .55; }
+@keyframes mascot-flight {
+  0%, 100% { transform: translate3d(0, 3px, 0) rotate(-1deg) scale(1); }
+  25% { transform: translate3d(5px, -9px, 0) rotate(1.3deg) scale(1.015); }
+  52% { transform: translate3d(-3px, -2px, 0) rotate(-.4deg) scale(1.005); }
+  76% { transform: translate3d(4px, 7px, 0) rotate(1deg) scale(.995); }
+}
+@keyframes mascot-body-roll {
+  0%, 100% { transform: rotate(-1deg) translateY(0); }
+  35% { transform: rotate(1.2deg) translateY(-3px); }
+  68% { transform: rotate(-.7deg) translateY(2px); }
+}
+@keyframes mascot-cape-wave {
+  0%, 100% { transform: skewY(0deg) scaleX(1); }
+  30% { transform: skewY(-2deg) scaleX(1.035); }
+  65% { transform: skewY(1.8deg) scaleX(.98); }
+}
+@keyframes mascot-aura-pulse {
+  0%, 100% { opacity: .72; transform: scale(.96); }
+  50% { opacity: 1; transform: scale(1.06); }
+}
+@media (max-width: 900px) {
+  .hero-art { transform: scale(.9); margin-inline: -20px; }
+  .hero-mascot { width: min(120%, 590px); }
+}
+@media (max-width: 640px) {
+  .hero-art { height: 300px; transform: none; margin: 16px 0 -5px; }
+  .hero-mascot { width: min(112%, 430px); max-height: 330px; }
+  .mascot-speedline-one { top: 58%; }
+  .mascot-speedline-two { top: 66%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-mascot, .mascot-cape, .mascot-body, .mascot-aura {
+    animation: none !important;
+  }
+}
