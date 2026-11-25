@@ -101,8 +101,8 @@ function HeroMascot() {
   return (
     <img
       className="hero-mascot hero-mascot-image"
-      src="/images/heropass-mascot-front.svg"
-      alt="Mascote HeroPass de frente, olhando para o visitante, com as duas luvas"
+      src="/images/a_clean_high_resolution_cutout_png_style_illustr.png"
+      alt="Mascote original HeroPass"
       loading="eager"
       fetchPriority="high"
     />
