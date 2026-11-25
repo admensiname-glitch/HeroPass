@@ -97,17 +97,14 @@ function BrandMark() {
 }
 
 
-function HeroMascot({ settled, onEnded }: { settled: boolean; onEnded: () => void }) {
+function HeroMascot() {
   return (
-    <video
-      className={`hero-mascot hero-mascot-video ${settled ? "is-settled" : ""}`}
-      src="/heropass-mascote.mp4"
-      aria-label="Mascote super-herói HeroPass voando e se posicionando diante do visitante"
-      autoPlay
-      muted
-      playsInline
-      preload="auto"
-      onEnded={onEnded}
+    <img
+      className="hero-mascot hero-mascot-image"
+      src="/images/a_clean_high_resolution_cutout_png_style_illustr.png"
+      alt="Mascote super-herói HeroPass em pose de voo"
+      loading="eager"
+      fetchPriority="high"
     />
   );
 }
@@ -115,7 +112,6 @@ function HeroMascot({ settled, onEnded }: { settled: boolean; onEnded: () => voi
 function HomePage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const [mascotSettled, setMascotSettled] = useState(false);
 
   const closeMenu = () => setMenuOpen(false);
 
@@ -177,7 +173,7 @@ function HomePage() {
           </div>
 
           <div className="hero-art" aria-label="Mascote super-herói HeroPass">
-            <HeroMascot settled={mascotSettled} onEnded={() => setMascotSettled(true)} />
+            <HeroMascot />
           </div>
         </div>
       </section>
