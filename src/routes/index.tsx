@@ -155,10 +155,17 @@ function HomePage() {
               <br />
               começa <span>aqui.</span>
             </h1>
-            <p>
-              Você escolhe entre Gympass e TotalPass. A gente acompanha o
-              caminho para sua solicitação de cadastro.
-            </p>
+            <div className="hero-offers">
+              <h2>O que oferecemos</h2>
+              <div className="hero-offer-logos">
+                <a className="hero-offer-logo gympass-logo" href="https://wellhub.com/pt-br/" target="_blank" rel="noreferrer" aria-label="Gympass">
+                  <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Logo_de_Gympass.svg" alt="Gympass" />
+                </a>
+                <a className="hero-offer-logo totalpass-logo" href="https://totalpass.com.br/" target="_blank" rel="noreferrer" aria-label="TotalPass">
+                  <img src="https://image.info.totalpass.com.br/lib/fe3711737164047a741672/m/1/3c3e88d7-b278-4dbf-a882-bcff5c57379a.png" alt="TotalPass" />
+                </a>
+              </div>
+            </div>
             <div className="hero-actions">
               <a className="button button-primary" href="#planos">
                 Conhecer planos <ArrowRight size={18} />
