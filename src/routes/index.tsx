@@ -101,7 +101,7 @@ function HeroMascot() {
   return (
     <img
       className="hero-mascot hero-mascot-image"
-      src="/images/a_clean_high_resolution_cutout_png_style_illustr.png"
+      src="/heropass-mascote-corrigido.webp"
       alt="Mascote original HeroPass"
       loading="eager"
       fetchPriority="high"
