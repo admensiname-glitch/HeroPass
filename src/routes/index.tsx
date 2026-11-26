@@ -156,10 +156,9 @@ function HomePage() {
               começa <span>aqui.</span>
             </h1>
             <div className="hero-offers">
-              <div className="hero-offers-title"><h2>O que oferecemos</h2><span>PARCEIROS DE BEM-ESTAR</span></div>
+              <div className="hero-offers-title"><h2>O que oferecemos</h2></div>
               <div className="hero-offer-logos">
                 <a className="hero-offer-logo gympass-logo" href="https://wellhub.com/pt-br/" target="_blank" rel="noreferrer" aria-label="Wellhub">
-                  <img className="wellhub-symbol" src="/wellhub.webp" alt="" />
                   <span className="wellhub-wordmark">wellhub</span>
                 </a>
                 <span className="hero-offers-connector" aria-hidden="true">+</span>
