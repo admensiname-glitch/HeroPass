@@ -159,10 +159,10 @@ function HomePage() {
               <h2>O que oferecemos</h2>
               <div className="hero-offer-logos">
                 <a className="hero-offer-logo gympass-logo" href="https://wellhub.com/pt-br/" target="_blank" rel="noreferrer" aria-label="Gympass">
-                  <img src="https://commons.wikimedia.org/wiki/Special:Redirect/file/Logo_de_Gympass.svg" alt="Gympass" />
+                  <img src="/wellhub.jpg" alt="Wellhub" />
                 </a>
                 <a className="hero-offer-logo totalpass-logo" href="https://totalpass.com.br/" target="_blank" rel="noreferrer" aria-label="TotalPass">
-                  <img src="https://image.info.totalpass.com.br/lib/fe3711737164047a741672/m/1/3c3e88d7-b278-4dbf-a882-bcff5c57379a.png" alt="TotalPass" />
+                  <img src="/Totalpass.avif" alt="TotalPass" />
                 </a>
               </div>
             </div>
