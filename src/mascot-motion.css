@@ -1,0 +1,21 @@
+/* Mascote HeroPass: flutuação leve, com movimento vertical e inclinação quase imperceptível. */
+.hero-mascot-image {
+  animation: heropass-mascot-float 5.6s ease-in-out infinite;
+  will-change: transform;
+}
+@keyframes heropass-mascot-float {
+  0%, 100% { transform: translate3d(-4%, 2px, 0) rotate(-0.35deg); }
+  50% { transform: translate3d(-4%, -13px, 0) rotate(0.45deg); }
+}
+@media (max-width: 640px) {
+  .hero-mascot-image {
+    animation: heropass-mascot-float-mobile 5.6s ease-in-out infinite;
+  }
+}
+@keyframes heropass-mascot-float-mobile {
+  0%, 100% { transform: translate3d(0, 1px, 0) rotate(-0.25deg); }
+  50% { transform: translate3d(0, -7px, 0) rotate(0.25deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-mascot-image { animation: none !important; will-change: auto; }
+}
