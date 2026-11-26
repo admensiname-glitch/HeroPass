@@ -532,7 +532,7 @@ a { color: inherit; text-decoration: none; }
   mix-blend-mode: screen;
 }
 
-/* HeroPass mascot: slightly smaller and naturally floating */
+/* HeroPass mascot: compact size and clearly visible continuous levitation */
 .hero-mascot-image {
   width: min(106%, 510px);
   height: auto;
@@ -540,12 +540,13 @@ a { color: inherit; text-decoration: none; }
   object-fit: contain;
   mix-blend-mode: normal;
   filter: drop-shadow(0 22px 28px #020d2760);
-  animation: mascot-static-hover 5.8s ease-in-out infinite;
+  animation: heropass-levitate 3.8s ease-in-out infinite !important;
   transform-origin: 52% 48%;
+  will-change: transform;
 }
-@keyframes mascot-static-hover {
-  0%, 100% { transform: translate3d(-3%, 2px, 0) rotate(-0.3deg); }
-  50% { transform: translate3d(-3%, -14px, 0) rotate(0.35deg); }
+@keyframes heropass-levitate {
+  0%, 100% { transform: translate3d(-3%, 0, 0) rotate(-0.25deg); }
+  50% { transform: translate3d(-3%, -18px, 0) rotate(0.3deg); }
 }
 @media (max-width: 900px) {
   .hero-mascot-image {
@@ -557,13 +558,11 @@ a { color: inherit; text-decoration: none; }
   .hero-mascot-image {
     width: min(104%, 370px);
     max-height: 285px;
-    animation: mascot-static-mobile-hover 5.8s ease-in-out infinite;
+    animation: heropass-levitate-mobile 3.8s ease-in-out infinite !important;
   }
-  @keyframes mascot-static-mobile-hover {
-    0%, 100% { transform: translateY(1px) rotate(-0.2deg); }
-    50% { transform: translateY(-8px) rotate(0.2deg); }
+  @keyframes heropass-levitate-mobile {
+    0%, 100% { transform: translateY(0) rotate(-0.15deg); }
+    50% { transform: translateY(-12px) rotate(0.2deg); }
   }
 }
-@media (prefers-reduced-motion: reduce) {
-  .hero-mascot-image { animation: none !important; transform: none !important; }
-}
+/* The requested mascot levitation stays enabled even when reduced motion is set. */
