@@ -156,14 +156,23 @@ function HomePage() {
               começa <span>aqui.</span>
             </h1>
             <div className="hero-offers">
-              <h2>O que oferecemos</h2>
-              <div className="hero-offer-logos">
-                <a className="hero-offer-logo gympass-logo" href="https://wellhub.com/pt-br/" target="_blank" rel="noreferrer" aria-label="Gympass">
-                  <img src="/wellhub.jpg" alt="Wellhub" />
-                </a>
-                <a className="hero-offer-logo totalpass-logo" href="https://totalpass.com.br/" target="_blank" rel="noreferrer" aria-label="TotalPass">
-                  <img src="/Totalpass.avif" alt="TotalPass" />
-                </a>
+              <div className="hero-partners-panel">
+                <div className="hero-partners-heading">
+                  <span className="hero-partners-kicker"><Sparkles size={13} /> PARCEIROS DE BEM-ESTAR</span>
+                  <h2>O que oferecemos</h2>
+                </div>
+                <div className="hero-offer-logos">
+                  <a className="hero-offer-logo gympass-logo" href="https://wellhub.com/pt-br/" target="_blank" rel="noreferrer" aria-label="Wellhub">
+                    <span className="hero-offer-logo-glow" />
+                    <img src="/wellhub.jpg" alt="Wellhub" />
+                    <span className="hero-offer-logo-name">Wellhub</span>
+                  </a>
+                  <a className="hero-offer-logo totalpass-logo" href="https://totalpass.com.br/" target="_blank" rel="noreferrer" aria-label="TotalPass">
+                    <span className="hero-offer-logo-glow" />
+                    <img src="/Totalpass.avif" alt="TotalPass" />
+                    <span className="hero-offer-logo-name">TotalPass</span>
+                  </a>
+                </div>
               </div>
             </div>
             <div className="hero-actions">
