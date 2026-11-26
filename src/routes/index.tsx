@@ -99,13 +99,15 @@ function BrandMark() {
 
 function HeroMascot() {
   return (
-    <img
-      className="hero-mascot hero-mascot-image"
-      src="/heropass-mascote-corrigido.webp"
-      alt="Mascote original HeroPass"
-      loading="eager"
-      fetchPriority="high"
-    />
+    <div className="hero-mascot-floating">
+      <img
+        className="hero-mascot-image"
+        src="/heropass-mascote-corrigido.webp"
+        alt="Mascote original HeroPass"
+        loading="eager"
+        fetchPriority="high"
+      />
+    </div>
   );
 }
 
