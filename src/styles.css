@@ -599,13 +599,13 @@ a { color: inherit; text-decoration: none; }
 }
 @media (prefers-reduced-motion: reduce) { .hero-offer-logo { transition: none; } }
 
-/* Partner spotlight: one official logo at a time, with Hiro presenting it */
+/* Partner spotlight — single Wellhub presentation, no selector or logo card */
 .partner-showcase {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: clamp(28px, 5vw, 70px);
-  min-height: 440px;
+  min-height: 420px;
   padding: clamp(24px, 4vw, 50px) 0;
 }
 .partner-showcase-copy h2 {
@@ -624,30 +624,7 @@ a { color: inherit; text-decoration: none; }
   max-width: 440px;
   margin: 0;
 }
-.partner-switch {
-  display: inline-flex;
-  padding: 4px;
-  border: 1px solid #e5ebf4;
-  background: #f5f8fc;
-  border-radius: 999px;
-  gap: 3px;
-  margin: 24px 0 20px;
-}
-.partner-switch button {
-  border: 0;
-  border-radius: 999px;
-  background: transparent;
-  padding: 10px 18px;
-  color: #63728a;
-  font: 800 12px "Manrope", sans-serif;
-  cursor: pointer;
-  transition: .2s ease;
-}
-.partner-switch button.is-active {
-  background: #fff;
-  color: var(--hp-navy);
-  box-shadow: 0 2px 9px #102b5015;
-}
+.partner-showcase-copy .button { margin-top: 24px; }
 .partner-showcase-copy .platform-note {
   text-align: left;
   margin: 15px 0 0;
@@ -660,70 +637,63 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  isolation: isolate;
+  overflow: visible;
 }
 .partner-showcase-art:before {
   content: "";
   position: absolute;
-  width: 330px;
-  height: 330px;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
   background: radial-gradient(circle, #eaf3ff 0%, #f6f9ff 52%, transparent 74%);
   z-index: -1;
 }
 .partner-logo-stage {
   position: absolute;
-  right: 5%;
+  right: 0;
   top: 18%;
-  width: min(66%, 320px);
-  min-height: 120px;
-  display: grid;
-  place-items: center;
-  padding: 26px;
-  background: #fff;
-  border: 1px solid #edf2f8;
-  border-radius: 24px;
-  box-shadow: 0 18px 55px #0b2c5710;
-  transform: rotate(2deg);
-  animation: partner-logo-float 5s ease-in-out infinite;
+  width: 62%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  transform: none;
+  animation: none;
+  z-index: 1;
 }
 .partner-logo-image {
+  display: block;
   width: 100%;
-  max-height: 130px;
+  height: auto;
+  max-height: 150px;
   object-fit: contain;
+  background: transparent;
 }
 .partner-presenter {
   position: absolute;
   left: 0;
-  bottom: -5%;
-  width: min(70%, 350px);
+  bottom: 0;
+  width: min(66%, 350px);
   max-height: 390px;
   object-fit: contain;
   object-position: bottom;
   filter: drop-shadow(0 16px 20px #08275c20);
   animation: partner-hiro-float 4.4s ease-in-out infinite;
+  z-index: 2;
 }
-.partner-art-spark {
-  position: absolute;
-  color: #1674ed;
-  font-size: 28px;
-  opacity: .65;
-  animation: partner-spark 3s ease-in-out infinite;
-}
-.partner-art-spark-one { top: 12%; left: 17%; }
-.partner-art-spark-two { right: 9%; bottom: 18%; animation-delay: 1.2s; font-size: 18px; }
-@keyframes partner-logo-float { 0%,100% { transform: rotate(2deg) translateY(0); } 50% { transform: rotate(2deg) translateY(-8px); } }
-@keyframes partner-hiro-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
-@keyframes partner-spark { 0%,100% { transform: scale(.8); opacity: .35; } 50% { transform: scale(1.12); opacity: .85; } }
+.partner-art-spark { display: none; }
+@keyframes partner-hiro-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
 @media (max-width: 760px) {
-  .partner-showcase { grid-template-columns: 1fr; gap: 18px; padding: 0; }
+  .partner-showcase { grid-template-columns: 1fr; gap: 12px; padding: 0; }
   .partner-showcase-copy h2 { font-size: 36px; letter-spacing: -1.7px; }
-  .partner-showcase-art { min-height: 320px; order: 2; margin-top: -5px; }
-  .partner-logo-stage { width: 64%; right: 3%; top: 14%; min-height: 90px; padding: 20px; }
-  .partner-presenter { width: min(72%, 300px); max-height: 330px; left: -2%; bottom: -3%; }
+  .partner-showcase-art { min-height: 320px; order: 2; margin-top: 0; }
+  .partner-logo-stage { width: 58%; right: 0; top: 12%; }
+  .partner-logo-image { max-height: 120px; }
+  .partner-presenter { width: min(68%, 300px); max-height: 330px; left: 0; bottom: 0; }
   .partner-showcase-copy .platform-note { font-size: 10px; }
 }
-@media (prefers-reduced-motion: reduce) {
-  .partner-logo-stage, .partner-presenter, .partner-art-spark { animation: none !important; }
-}
+@media (prefers-reduced-motion: reduce) { .partner-presenter { animation: none !important; } }
