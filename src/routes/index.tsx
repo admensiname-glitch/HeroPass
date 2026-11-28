@@ -5,6 +5,8 @@ import {
   Check,
   ChevronDown,
   CreditCard,
+  Gem,
+  Gift,
   MessageCircle,
   ShieldCheck,
   Sparkles,
@@ -133,9 +135,10 @@ function HomePage() {
           </button>
           <nav className={`main-nav ${menuOpen ? "is-open" : ""}`}>
             <a href="#inicio" onClick={closeMenu}>Início</a>
-            <a href="#como-funciona" onClick={closeMenu}>Como funciona</a>
+            <a href="#plataformas" onClick={closeMenu}>Benefícios</a>
             <a href="#planos" onClick={closeMenu}>Planos</a>
-            <a href="#duvidas" onClick={closeMenu}>Dúvidas</a>
+            <a href="#como-funciona" onClick={closeMenu}>Sobre</a>
+            <a href="#duvidas" onClick={closeMenu}>Ajuda</a>
             <a className="nav-cta" href="#atendimento" onClick={closeMenu}>
               Falar com a equipe <ArrowUpRight size={16} />
             </a>
@@ -144,35 +147,32 @@ function HomePage() {
       </header>
 
       <section className="hero-section" id="inicio">
+        <div className="hero-backdrop-glow" aria-hidden="true" />
         <div className="container hero-content">
           <div className="hero-copy">
-            <div className="eyebrow eyebrow-light">
-              <span className="eyebrow-dot" /> MOVIMENTO QUE TRANSFORMA
-            </div>
+            <div className="hero-kicker"><Sparkles size={15} /> SUA JORNADA DE BENEFÍCIOS COMEÇA AQUI</div>
             <h1>
-              Seu próximo nível
-              <br />
-              começa <span>aqui.</span>
+              HeroPass<br />
+              Mais vantagens<br />
+              <span>para você!</span>
             </h1>
-
+            <p>Aproveite benefícios exclusivos, descontos incríveis e muito mais, em um só lugar.</p>
             <div className="hero-actions">
               <a className="button button-primary" href="#planos">
-                Conhecer planos <ArrowRight size={18} />
+                <Sparkles size={18} /> Comece agora <ArrowRight size={18} />
               </a>
-              <a className="button button-ghost" href="#atendimento">
-                Falar com a equipe
-              </a>
-            </div>
-            <div className="hero-assurance">
-              <span><ShieldCheck size={16} /> Atendimento acompanhado</span>
-              <i />
-              <span><Zap size={16} /> Adesão única</span>
             </div>
           </div>
-
-          <div className="hero-art" aria-label="Mascote super-herói HeroPass">
+          <div className="hero-art" aria-label="Hiro, mascote super-herói HeroPass em voo">
+            <div className="hero-art-glow" aria-hidden="true" />
             <HeroMascot />
           </div>
+        </div>
+        <div className="container hero-benefits">
+          <div className="hero-benefit"><Gem size={34} /><span>Descontos<br />exclusivos</span></div>
+          <div className="hero-benefit"><Gift size={34} /><span>Benefícios<br />personalizados</span></div>
+          <div className="hero-benefit"><Zap size={34} /><span>Acesso rápido<br />e fácil</span></div>
+          <div className="hero-benefit"><ShieldCheck size={34} /><span>Segurança<br />em primeiro lugar</span></div>
         </div>
       </section>
 
