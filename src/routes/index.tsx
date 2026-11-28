@@ -114,8 +114,6 @@ function HeroMascot() {
 function HomePage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const [partner, setPartner] = useState<"wellhub" | "totalpass">("wellhub");
-
   const closeMenu = () => setMenuOpen(false);
 
   return (
@@ -185,16 +183,12 @@ function HomePage() {
               <span className="eyebrow">VOCÊ NO CONTROLE</span>
               <h2>Seu próximo passo<br /><span>começa com bem-estar.</span></h2>
               <p>Conheça a plataforma e escolha o plano de adesão ideal com o acompanhamento HeroPass.</p>
-              <div className="partner-switch" role="group" aria-label="Escolha a plataforma">
-                <button type="button" className={partner === "wellhub" ? "is-active" : ""} onClick={() => setPartner("wellhub")} aria-pressed={partner === "wellhub"}>Wellhub</button>
-                <button type="button" className={partner === "totalpass" ? "is-active" : ""} onClick={() => setPartner("totalpass")} aria-pressed={partner === "totalpass"}>TotalPass</button>
-              </div>
               <a className="button button-primary" href="#planos">Ver opções de adesão <ArrowRight size={17} /></a>
               <p className="platform-note">A disponibilidade e a aprovação do cadastro dependem dos critérios vigentes da plataforma.</p>
             </div>
             <div className="partner-showcase-art">
               <div className="partner-logo-stage">
-                <img className="partner-logo-image" src={partner === "wellhub" ? "/wellhub.webp" : "/Totalpass.avif"} alt={partner === "wellhub" ? "Logo oficial Wellhub" : "Logo oficial TotalPass"} />
+                <img className="partner-logo-image" src="/wellhub.webp" alt="Wellhub" />
               </div>
               <img className="partner-presenter" src="/heropass-mascote-corrigido.webp" alt="Hiro, mascote HeroPass apresentando a plataforma" />
               <span className="partner-art-spark partner-art-spark-one" aria-hidden="true">✦</span>
