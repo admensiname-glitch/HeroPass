@@ -114,6 +114,7 @@ function HeroMascot() {
 function HomePage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [partner, setPartner] = useState<"wellhub" | "totalpass">("wellhub");
 
   const closeMenu = () => setMenuOpen(false);
 
@@ -155,18 +156,7 @@ function HomePage() {
               <br />
               começa <span>aqui.</span>
             </h1>
-            <div className="hero-offers">
-              <div className="hero-offers-title"><h2>O que oferecemos</h2></div>
-              <div className="hero-offer-logos">
-                <a className="hero-offer-logo gympass-logo" href="https://wellhub.com/pt-br/" target="_blank" rel="noreferrer" aria-label="Wellhub">
-                  <span className="wellhub-wordmark">wellhub</span>
-                </a>
-                <span className="hero-offers-connector" aria-hidden="true">+</span>
-                <a className="hero-offer-logo totalpass-logo" href="https://totalpass.com.br/" target="_blank" rel="noreferrer" aria-label="TotalPass">
-                  <span className="totalpass-wordmark"><span>TOTAL</span><span>PASS</span></span>
-                </a>
-              </div>
-            </div>
+
             <div className="hero-actions">
               <a className="button button-primary" href="#planos">
                 Conhecer planos <ArrowRight size={18} />
@@ -190,38 +180,29 @@ function HomePage() {
 
       <section className="platform-section section-pad" id="plataformas">
         <div className="container">
-          <div className="section-heading centered">
-            <span className="eyebrow">VOCÊ NO CONTROLE</span>
-            <h2>Duas possibilidades.<br /><span>Uma escolha sua.</span></h2>
-            <p>Escolha a plataforma que faz sentido para você e siga com o plano de adesão ideal.</p>
-          </div>
-          <div className="platform-grid">
-            <article className="platform-card platform-gym">
-              <div className="platform-letter">G</div>
-              <div className="platform-card-content">
-                <span className="platform-kicker">ACESSO INDIVIDUAL</span>
-                <h3>Gympass</h3>
-                <p>Uma conta individual para cada pessoa incluída na adesão.</p>
-                <a href="#planos">Ver opções de adesão <ArrowRight size={16} /></a>
+          <div className="partner-showcase" aria-live="polite">
+            <div className="partner-showcase-copy">
+              <span className="eyebrow">VOCÊ NO CONTROLE</span>
+              <h2>Seu próximo passo<br /><span>começa com bem-estar.</span></h2>
+              <p>Conheça a plataforma e escolha o plano de adesão ideal com o acompanhamento HeroPass.</p>
+              <div className="partner-switch" role="group" aria-label="Escolha a plataforma">
+                <button type="button" className={partner === "wellhub" ? "is-active" : ""} onClick={() => setPartner("wellhub")} aria-pressed={partner === "wellhub"}>Wellhub</button>
+                <button type="button" className={partner === "totalpass" ? "is-active" : ""} onClick={() => setPartner("totalpass")} aria-pressed={partner === "totalpass"}>TotalPass</button>
               </div>
-              <span className="platform-number">01</span>
-            </article>
-            <article className="platform-card platform-total">
-              <div className="platform-letter">T</div>
-              <div className="platform-card-content">
-                <span className="platform-kicker">FORMATO FAMILIAR</span>
-                <h3>TotalPass</h3>
-                <p>Um titular e dependentes, conforme as regras da plataforma.</p>
-                <a href="#planos">Ver opções de adesão <ArrowRight size={16} /></a>
+              <a className="button button-primary" href="#planos">Ver opções de adesão <ArrowRight size={17} /></a>
+              <p className="platform-note">A disponibilidade e a aprovação do cadastro dependem dos critérios vigentes da plataforma.</p>
+            </div>
+            <div className="partner-showcase-art">
+              <div className="partner-logo-stage">
+                <img className="partner-logo-image" src={partner === "wellhub" ? "/wellhub.webp" : "/Totalpass.avif"} alt={partner === "wellhub" ? "Logo oficial Wellhub" : "Logo oficial TotalPass"} />
               </div>
-              <span className="platform-number">02</span>
-            </article>
+              <img className="partner-presenter" src="/heropass-mascote-corrigido.webp" alt="Hiro, mascote HeroPass apresentando a plataforma" />
+              <span className="partner-art-spark partner-art-spark-one" aria-hidden="true">✦</span>
+              <span className="partner-art-spark partner-art-spark-two" aria-hidden="true">✦</span>
+            </div>
           </div>
-          <p className="platform-note">A disponibilidade e a aprovação do cadastro dependem dos critérios vigentes de cada plataforma.</p>
         </div>
-      </section>
-
-      <section className="how-section section-pad" id="como-funciona">
+      </section>      <section className="how-section section-pad" id="como-funciona">
         <div className="container how-layout">
           <div className="section-heading how-heading">
             <span className="eyebrow eyebrow-light">SIMPLES DO COMEÇO AO FIM</span>
