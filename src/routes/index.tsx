@@ -202,7 +202,9 @@ function HomePage() {
             </div>
           </div>
         </div>
-      </section>      <section className="how-section section-pad" id="como-funciona">
+      </section>
+
+      <section className="how-section section-pad" id="como-funciona">
         <div className="container how-layout">
           <div className="section-heading how-heading">
             <span className="eyebrow eyebrow-light">SIMPLES DO COMEÇO AO FIM</span>
