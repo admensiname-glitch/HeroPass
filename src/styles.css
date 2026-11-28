@@ -697,3 +697,173 @@ a { color: inherit; text-decoration: none; }
   .partner-showcase-copy .platform-note { font-size: 10px; }
 }
 @media (prefers-reduced-motion: reduce) { .partner-presenter { animation: none !important; } }
+
+/* HeroPass hero redesign — bold blue sky, floating Hiro, benefits rail */
+.site-header {
+  height: 84px;
+  background: linear-gradient(180deg, #061536 0%, #071b49 100%);
+  border-bottom: 1px solid #1b4d98;
+}
+.site-header .brand { color: #f7fbff; }
+.site-header .brand-symbol { background: #0874f9; box-shadow: 0 7px 18px #0475ff45; }
+.main-nav { color: #edf5ff; }
+.main-nav > a:not(.nav-cta):hover { color: #43a8ff; }
+.nav-cta { border: 1px solid #168bff; border-radius: 28px; background: transparent; padding: 12px 20px; }
+.nav-cta:hover { background: #0874f9; }
+.hero-section {
+  min-height: 740px;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  background:
+    radial-gradient(ellipse at 75% 58%, #178bff88 0%, #0d55c94d 28%, transparent 54%),
+    radial-gradient(ellipse at 45% 20%, #083d9c 0%, transparent 42%),
+    linear-gradient(115deg, #031335 0%, #052466 43%, #063b9c 74%, #0871e8 100%);
+}
+.hero-section:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(165deg, transparent 48%, #0c66d820 62%, transparent 72%),
+    repeating-linear-gradient(160deg, transparent 0 100px, #7bc6ff09 100px 102px);
+  pointer-events: none;
+}
+.hero-section:after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 155px;
+  background: linear-gradient(180deg, transparent, #031b50b5 72%, #031b50);
+  pointer-events: none;
+}
+.hero-backdrop-glow {
+  position: absolute;
+  width: 58vw;
+  height: 58vw;
+  max-width: 900px;
+  max-height: 900px;
+  border-radius: 50%;
+  right: -10%;
+  top: 8%;
+  background: radial-gradient(circle, #42aaff30 0%, #1477ff15 42%, transparent 72%);
+  filter: blur(20px);
+  pointer-events: none;
+}
+.hero-content {
+  min-height: 610px;
+  display: grid;
+  grid-template-columns: 1.02fr .98fr;
+  align-items: center;
+  padding-top: 22px;
+  padding-bottom: 4px;
+}
+.hero-copy { max-width: 660px; padding: 38px 0 26px; position: relative; z-index: 3; }
+.hero-kicker {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 10px 17px; border: 1px solid #168bff; border-radius: 999px;
+  background: #061a4b65; color: #e9f4ff;
+  font-size: 12px; font-weight: 800; letter-spacing: .4px;
+}
+.hero-kicker svg { color: #4baaff; fill: #4baaff; }
+.hero-copy h1 {
+  font-size: clamp(50px, 6vw, 82px);
+  line-height: 1.03;
+  letter-spacing: -4px;
+  margin: 24px 0 18px;
+  font-weight: 800;
+  color: #fff;
+}
+.hero-copy h1 span { color: #0789ff; }
+.hero-copy > p { max-width: 520px; color: #d5e6ff; font-size: clamp(15px, 1.4vw, 19px); line-height: 1.65; }
+.hero-actions { margin-top: 28px; }
+.hero-actions .button-primary {
+  min-height: 64px; padding: 0 28px; border-radius: 999px;
+  background: #0875f8; font-size: 17px; box-shadow: 0 14px 35px #0065ff40;
+}
+.hero-actions .button-primary:hover { background: #168bff; }
+.hero-art {
+  height: 560px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  overflow: visible;
+  z-index: 2;
+  margin-left: -4%;
+}
+.hero-art-glow {
+  position: absolute;
+  width: 90%; aspect-ratio: 1; border-radius: 50%;
+  background: radial-gradient(circle, #43aaff5c 0%, #0b75ff24 42%, transparent 72%);
+  filter: blur(15px);
+}
+.hero-art .hero-mascot-floating {
+  display: block;
+  width: min(120%, 620px);
+  animation: hero-reference-float 4.3s ease-in-out infinite !important;
+  will-change: transform;
+  position: relative;
+  z-index: 2;
+}
+.hero-art .hero-mascot-image {
+  width: 100%;
+  max-height: 590px;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 24px 34px #00102e85);
+  mix-blend-mode: normal;
+}
+@keyframes hero-reference-float {
+  0%, 100% { transform: translateY(2px) rotate(-.4deg); }
+  50% { transform: translateY(-18px) rotate(.5deg); }
+}
+.hero-benefits {
+  position: relative;
+  z-index: 4;
+  min-height: 115px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  padding: 14px 0 26px;
+}
+.hero-benefit {
+  display: flex; align-items: center; justify-content: center; gap: 18px;
+  min-height: 62px; color: #eaf4ff; font-size: 14px; font-weight: 700; line-height: 1.45;
+}
+.hero-benefit + .hero-benefit { border-left: 1px solid #7ca8e65a; }
+.hero-benefit svg { color: #0789ff; stroke-width: 2.1; flex-shrink: 0; }
+@media (max-width: 900px) {
+  .hero-section { min-height: auto; }
+  .hero-content { min-height: 570px; grid-template-columns: 1fr .9fr; }
+  .hero-copy h1 { font-size: clamp(44px, 6vw, 62px); letter-spacing: -2.8px; }
+  .hero-art { height: 460px; margin-left: -8%; }
+  .hero-art .hero-mascot-floating { width: min(126%, 530px); }
+  .hero-benefit { gap: 10px; font-size: 12px; }
+}
+@media (max-width: 640px) {
+  .site-header { height: 72px; }
+  .site-header .brand { font-size: 21px; }
+  .brand-symbol { width: 33px; height: 33px; }
+  .main-nav { color: #eaf4ff; }
+  .main-nav.is-open { background: #06183d; border: 1px solid #16488d; box-shadow: 0 18px 38px #0005; }
+  .main-nav.is-open a:not(.nav-cta) { color: #eaf4ff; }
+  .hero-section { min-height: 0; }
+  .hero-content { min-height: 0; display: flex; flex-direction: column; align-items: stretch; padding-top: 38px; padding-bottom: 0; }
+  .hero-copy { padding: 0; }
+  .hero-kicker { font-size: 9px; padding: 9px 12px; letter-spacing: .3px; }
+  .hero-copy h1 { font-size: clamp(42px, 11vw, 56px); line-height: 1.04; letter-spacing: -2.6px; margin: 20px 0 14px; }
+  .hero-copy > p { font-size: 14px; line-height: 1.65; max-width: 350px; }
+  .hero-actions { margin-top: 21px; }
+  .hero-actions .button-primary { min-height: 54px; font-size: 15px; padding: 0 21px; }
+  .hero-art { height: 340px; width: 100%; margin: 0; }
+  .hero-art .hero-mascot-floating { width: min(112%, 410px); }
+  .hero-art .hero-mascot-image { max-height: 360px; }
+  .hero-benefits { grid-template-columns: 1fr 1fr; min-height: 0; padding: 12px 0 25px; gap: 4px 0; }
+  .hero-benefit { min-height: 58px; justify-content: flex-start; padding: 8px 12px; gap: 10px; font-size: 10px; }
+  .hero-benefit:nth-child(2n+1) { border-left: 0; }
+  .hero-benefit:nth-child(2n) { border-left: 1px solid #7ca8e65a; }
+  .hero-benefit svg { width: 27px; height: 27px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-art .hero-mascot-floating { animation: none !important; }
+}
